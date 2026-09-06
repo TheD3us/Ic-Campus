@@ -22,7 +22,7 @@ Ensuite la commande pour lancer gunicorn, qui écoutera sur toutes les adresses 
    
 Je fais la commande suivante :
 
-<article>trivy image --severity HIGH,CRITICAL ic-campus-api:1.0</article>
+<code>trivy image --severity HIGH,CRITICAL ic-campus-api:1.0</code>
 
 Ainsi j'ai obtenu, lors de mes tests, des alertes sur les vulnérabilités liées aux versions de certaines dépendances. Voici donc l'explication de la présence des deux paquets spécifiques libcrypto3 et util-linux.
 Cela me permets d'utiliser la dernière version stable de ces paquets et limiter les vulnérabilités détectées par Trivy.
