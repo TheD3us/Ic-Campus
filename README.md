@@ -31,9 +31,24 @@ Cela me permets d'utiliser la dernière version stable de ces paquets et limiter
 
 <h2>Création du Dockerfile web</h2>
 
-<img src="img/CaptureDockerfileWeb.png " alt="Capture écran du docker file côté api" width="600">
+<img src="img/CaptureDockerfileWeb.png " alt="Capture écran du docker file côté web" width="600">
 
 Cette fois le Dockerfile est composé de deux stages : builder et runtime. Dans le premier stage je travaille avec node.js 20. Le déroulé du fichier est le suivant : je me positionne sur le dossier /app. Je copie les package*.json au même endroit. je réalise un npm clean install. Toujours via COPY je rapatrie les fichiers de configuration. Pour finir je lance un build de mon application.
 Pour le deuxième stageje travaille avec nginx version 1.30.4. Je commence par mettre à jour mon serveur. Puis j'ajoute le paquet curl pour la même raison que dans la partie api. Viennent ensuite les labels. Je veux ensuite créer un utilisateur non root, je dois le créer et lui attribuer des droits. Je copie ensuite des fichiers indispensables au bon fonctionnement du serveur. Je connecte l'utilisateur icweb créé précédemment.
 Puis je réalise un HEALTHCHECK qui contrôlera le bon fonctionnement de mon serveur. J'expose le port 8080.
 
+<h2>Création du Docker Compose</h2>
+
+<img src="img/CaptureDockerCompose.png " alt="Capture écran du docker compose" width="600">
+
+Dans le but de pouvoir déployer l'infrastructure en une commande, je vais créer le fichier docker-compose.yml. Dans ce fichier nous pouvons voir les deux networks en bas et les deux services ic-api et ic-web.
+
+<img src="img/CaptureDockerCompose.png " alt="Capture écran du résultat docker compose" width="600">
+
+Lorsque je lance la commande :
+<code>docker compose up -d</code>
+Je peux voir que mes deux container sont lancés.
+
+<img src="img/CapturePageWeb.png " alt="Capture écran de la page web" width="600">
+
+Je peux consulter le site sans encombre.
