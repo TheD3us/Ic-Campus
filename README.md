@@ -1,13 +1,13 @@
+<h1>IC-Campus, projet de création d’une infrastructure</h1>
 
-IC-Campus, projet de création d’une infrastructure
-
-Présentation de l'infrastructure
+<h2>Présentation de l'infrastructure</h2>
 
 <img src="img/archi-network.jpeg" alt="Schéma réseau 3-tiers IC-Campus" width="600">
 
 Nous aurons le frontend et le backend chacun dans un réseau différent. Cette option apporte de la sécurité, en réduisant la surface possible d’attaque. La charge de travail est aussi répartie entre les deux serveurs. De plus, la maintenabilité est accrue et la structure réalisée permet de réduire les risques de bugs après la modification d’un module.
 
-Création du DockerFile Api
+<h2>Création du DockerFile Api</h2>
+
 <img src="img/CaptureDockerfileApi.png " alt="Capture écran du docker file côté api" width="600">
 
 Voici le Dockerfile que j’ai rédigé en suivant les instructions données. Nous avons une utilisation de l’image python:3.12-alpine. J’attribue ensuite les valeurs aux labels désignés.
