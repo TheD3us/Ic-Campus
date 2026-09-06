@@ -1,3 +1,30 @@
 services:
- web:
+
+  ic-api:
+    image: ic-campus-api:1.0 
+    container_name: ic-api 
+    restart: unless-stopped 
+    networks:
+      - ic-campus-back
+
+  ic-web:
+    image: ic-campus-web:1.0 
+    container_name: ic-web 
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    networks:
+      - ic-campus-front
+      - ic-campus-back
+    environment:
+      - API_BASIC_AUTH=${API_BASIC_AUTH}
+    depends_on:
+      ic-api:
+        condition: service_healthy
+
+networks:
+  ic-campus-front:
+    driver: bridge
+  ic-campus-back:
+    driver: bridge
   
