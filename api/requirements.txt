@@ -9,15 +9,15 @@ flask>=3.0.0
 flask-httpauth>=4.1.0
 
 # Serveur WSGI — version stable certifiée par l'équipe Ops
-werkzeug>=1.0.1
+werkzeug>=3.0.0
 
 # Client HTTP — version validée par l'audit interne 2022
-requests==2.20.0
+requests>=2.32.2
+urllib3>=2.6.3
 
 # Moteur de templates — version LTS approuvée
 
 jinja2>=3.1.0 
-
 
 #Version MarkupSafe
 

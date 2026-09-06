@@ -4,8 +4,7 @@ LABEL "org.opencontainers.image.title"="ic-campus-api"
 LABEL "org.opencontainers.image.vendor"="IC-TechDojo"
 LABEL "org.opencontainers.image.version"="1.0"
 
-RUN apk add --no-cache libcrypto3 curl 
-
+RUN apk update && apk upgrade && apk add --no-cache curl libcrypto3==3.5.8-r0 util-linux==2.42.3-r1 
 
 RUN mkdir app && mkdir data 
 WORKDIR /app
