@@ -38,9 +38,21 @@ Cela me permets d'utiliser la dernière version stable de ces paquets et limiter
 
 <img src="img/CaptureDockerfileWeb.png " alt="Capture écran du docker file côté web" width="600">
 
-Cette fois le Dockerfile est composé de deux stages : builder et runtime. Dans le premier stage je travaille avec node.js 20. Le déroulé du fichier est le suivant : je me positionne sur le dossier /app. Je copie les package*.json au même endroit. je réalise un npm clean install. Toujours via COPY je rapatrie les fichiers de configuration. Pour finir je lance un build de mon application.
-Pour le deuxième stageje travaille avec nginx version 1.30.4. Je commence par mettre à jour mon serveur. Puis j'ajoute le paquet curl pour la même raison que dans la partie api. Viennent ensuite les labels. Je veux ensuite créer un utilisateur non root, je dois le créer et lui attribuer des droits. Je copie ensuite des fichiers indispensables au bon fonctionnement du serveur. Je connecte l'utilisateur icweb créé précédemment.
-Puis je réalise un HEALTHCHECK qui contrôlera le bon fonctionnement de mon serveur. J'expose le port 8080.
+Cette fois le Dockerfile est composé de deux stages : builder et runtime. Dans le premier stage je travaille avec node.js 20. Le déroulé du fichier est le suivant : 
+<li>Je me positionne sur le dossier /app. </li>
+<li>Je copie les package*.json au même endroit. </li>
+<li>Je réalise un npm clean install. </li>
+<li>Toujours via COPY je rapatrie les fichiers de configuration. </li>
+<li>Pour finir je lance un build de mon application.</li>
+Pour le deuxième stageje travaille avec nginx version 1.30.4. 
+<li>Je commence par mettre à jour mon serveur. </li>
+<li>Puis j'ajoute le paquet curl pour la même raison que dans la partie api. </li>
+<li>Viennent ensuite les labels. </li>
+<li>Je veux ensuite créer un utilisateur non root, je dois le créer et lui attribuer des droits. </li>
+<li>Je copie ensuite des fichiers indispensables au bon fonctionnement du serveur. </li>
+<li>Je connecte l'utilisateur icweb créé précédemment.</li>
+<li>Je réalise un HEALTHCHECK qui contrôlera le bon fonctionnement de mon serveur. </li>
+<li>J'expose le port 8080.</li>
 
 <h2>Création du Docker Compose</h2>
 
