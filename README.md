@@ -43,7 +43,7 @@ Puis je réalise un HEALTHCHECK qui contrôlera le bon fonctionnement de mon ser
 
 Dans le but de pouvoir déployer l'infrastructure en une commande, je vais créer le fichier docker-compose.yml. Dans ce fichier nous pouvons voir les deux networks en bas et les deux services ic-api et ic-web.
 
-<img src="img/CaptureDockerCompose.png " alt="Capture écran du résultat docker compose" width="600">
+<img src="img/CaptureDockerComposeUp.png " alt="Capture écran du résultat docker compose" width="600">
 
 Lorsque je lance la commande :
 <code>docker compose up -d</code>
