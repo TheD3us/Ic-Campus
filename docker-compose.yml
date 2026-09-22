@@ -2,10 +2,14 @@ services:
 
   ic-api:
     image: ic-campus-api:1.0 
-    container_name: ic-api 
+    container_name: ic-api
+    ports:
+      - "5001:5000"
     restart: unless-stopped 
     networks:
       - ic-campus-back
+      - ic-campus-front
+
 
   ic-web:
     image: ic-campus-web:1.0 
@@ -15,7 +19,6 @@ services:
     restart: unless-stopped
     networks:
       - ic-campus-front
-      - ic-campus-back
     environment:
       - API_BASIC_AUTH=${API_BASIC_AUTH}
     depends_on:
